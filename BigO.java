@@ -123,7 +123,10 @@
 
 
 
-
+// finding all the subsets of a set of n elements - O(2^n)
+//finding all the permutations of a set of n elements - O(n!)
+//sorting using marge sort - O(n log n)
+//interating over all the cells in a matrix of size n by m - O(n*m)
 
 
 
