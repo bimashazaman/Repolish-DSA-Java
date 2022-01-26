@@ -69,6 +69,60 @@
 
 //==================================
 
+//Quadratic Time Complexity : O(n^2)
+//==================================
+
+// for(int i = 0; i < n; i++)
+// {
+//     for(int j = 0; j < n; j++)
+//     {
+//         //do something
+//     }
+// }
+
+//f(n) = n*n = n^2
+//O(f(n)) = O(n^2)
+
+//focus on the second loop, since i goes from [0, n] the amount looping done is directly detarmined by what i is. remark that if i=0, we do n work, if i  = 1, we do n-1 work , if i = 2, we do n-2 work, and so on.
+
+//what if (n) + (n-1) + (n-2) + (n-3) + (n-4) + (n-5) + (n-6) + (n-7) + (n-8) + (n-9) + (n-10) + 3 + 2 + 1 = n^2
+
+//how to calculate n^2?
+//n^2 = n*n
+//O(n(n+1)/2) = O(n^2)
+
+//==================================
+
+//Exponential Time Complexity : O(2^n)
+//==================================
+
+// //suppose we have a sorted array and we want to find the index of a value in the array. we can do this in O(log n) time.
+
+// low := 0
+// high := n - 1
+// while low <= high do
+// {
+//     mid := (low + high) / 2
+
+//     if a[mid] == x
+//     {
+//         return mid
+//     }
+//     else if a[mid] < x
+//     {
+//         low := mid + 1
+//     }
+//     else
+//     {
+//         high := mid - 1
+//     }
+//return -1 // value not found
+// }
+
+//==================================
+
+
+
 
 
 
