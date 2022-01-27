@@ -129,3 +129,111 @@
 //4. node to remove has both a left and right subtree
 
 
+// ok lets write some codees
+
+public class BinaryTree<T extends comparable<T>> 
+{
+    // Tracks the number of the nodes in bst
+    private int nodeCount = 0;
+
+    //this is a rooted tree so we have a root node
+    private Node root = null;
+
+    private class Node{
+        T data;
+        Node left;
+        Node right;
+
+        public Node(Node left, Node right, T elem){
+            this.data = elem;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+    // check if binary tree is empty
+    public boolean isEmpty(){
+        return size() == 0;
+    }
+
+    // return the number of nodes in the binary tree
+    public int size(){
+        return nodeCount;
+    }
+
+    // insert a new node into the binary tree
+public boolean add(T elem)
+{
+    if(contains(elem))
+    {
+        return false;
+    }
+    else
+    {
+        root = add(root, elem);
+        nodeCount++;
+        return true;
+    }
+
+    private Node add(Node node, T elem)
+    {
+        //base case
+        if(node == null)
+        {
+            node = new Node(null, null, elem);
+        }
+        else
+        {
+            int comp = elem.compareTo(node.data);
+            if(comp < 0)
+            {
+                node.left = add(node.left, elem);
+            }
+            else if(comp > 0)
+            {
+                node.right = add(node.right, elem);
+            }
+        }
+    }
+
+    // remove a node from the binary tree
+    public boolean remove(T elem)
+    {
+        if(!contains(elem))
+        {
+            return false;
+        }
+        else
+        {
+            root = remove(root, elem);
+            nodeCount--;
+            return true;
+        }
+    }
+
+
+//recursive helper method
+    private Node remove(Node node, T elem)
+    {
+        if(node == null) return null;
+
+        int comp = elem.compareTo(node.data);
+
+        if(cmp < 0)
+        {
+            node.left = remove(node.left, elem);
+        }
+
+        if(cmp > 0)
+        {
+            node.right = remove(node.right, elem);
+        }
+    }
+
+    
+
+}
+
+
+
+}
