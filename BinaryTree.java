@@ -27,8 +27,8 @@
                             //      8
                             //     /  \
                             //    4    12  
-                            //   / \    / \  
-                            //  3   6  9   13
+                            //   / \   / \  
+                            //  3   6 9   13
 
 
 //where are the BTs and BSTs USED?
@@ -103,3 +103,29 @@
                         //     3   6  9   10
                         //     / \    \
                         //    2   4    8
+
+
+//Removing element fro ma binary search tree
+
+// its a two step proccess
+
+//1. find the element we want to remove
+// Relace the node we want to remove  with its successor to maintain the bst invariant
+
+//recall the bst invariant: left subtree has a smaller value than the root and the right subtree has a larger value than the root
+
+
+//find Phase
+//1.We hit the null node at the point we know the value is not in the tree
+//2. comparator value equal to 0-- we found it
+//3. comparator value less than 0-- we recurse down the left subtree
+//4. comparator value greater than 0-- we recurse down the right subtree
+
+
+//remove Phase
+//1. node to remove is a leaf node
+//2. node to remove has a right subtree but no left subtree
+//3. node we want to remove has a left subtree but no right subtree
+//4. node to remove has both a left and right subtree
+
+
