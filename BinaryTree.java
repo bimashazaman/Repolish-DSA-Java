@@ -61,7 +61,7 @@
 // |   Remove        |     O(log n)     |        O(n)    |
 // |=================|==================|================|
 // |   Find          |     O(log n)     |        O(n)    |
-// |=================|==================| ================|
+// |=================|==================| ===============|
 // |   Contains      |      O(log n)    |         O(n)   |
 // |=================|==================|================|
 // |   Size          |      O(1)        |         O(1)   |
@@ -75,4 +75,31 @@
 // |   ToList        |      O(n)        |         O(n)   |
 // |======================================================
 
+// Binary tree elements must be comparable so that we can order them inside the tree
 
+// when inserting AN ELEMENT we want to compare its value to the value store stored in the current node we are considering to decide on the following
+
+// Recurse down left subtree             (< case)
+//Recurse down right subtree             (> case)
+//Hndle finding a dup value              (= case)
+//Handle inserting a new node            (no case)
+
+
+//insert(7)
+//insert(5)
+//insert(3)
+//insert(2)
+//insert(4)
+//insert(6)
+//insert(8)
+//insert(9)
+//insert(10)
+//insert(11)
+
+                        //          7                  =====>> RIGHT > ROOT > LEFT 
+                        //         /  \ 
+                        //        5    11        
+                        //      / \    / \     
+                        //     3   6  9   10
+                        //     / \    \
+                        //    2   4    8
