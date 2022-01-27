@@ -223,14 +223,90 @@ public boolean add(T elem)
         {
             node.left = remove(node.left, elem);
         }
-
-        if(cmp > 0)
+            else if(cmp > 0)
         {
             node.right = remove(node.right, elem);
         }
+
+        else{
+            //node to remove has both left and right subtree
+            if(node.left == null)
+            {
+                Node rightchild = node.right;
+
+                node = null;
+                node.data = null;
+
+                return rightchild;
+            }
+            else if(node.right == null)
+            {
+                Node leftchild = node.left;
+
+                node = null;
+                node.data = null;
+
+                return leftchild;
+            }
+            else
+            {
+                Node successor = getSuccessor(node);
+                node.data = successor.data;
+                node.right = remove(node.right, successor.data);
+
+
+            }
+
+
+        }
+
+        return node;
+
+
+
+        //base case
+
     }
 
-    
+    private Node getSuccessor(Node node)
+    {
+        Node successor = null;
+        Node current = node.right;
+
+        while(current != null)
+        {
+            successor = current;
+            current = current.left;
+        }
+
+        return successor;
+    }
+
+private boolean contains(Node node, T elem)
+{
+    if(node == null)
+    {
+        return false;
+    }
+    else
+    {
+        int comp = elem.compareTo(node.data);
+        if(comp < 0)
+        {
+            return contains(node.left, elem);
+        }
+        else if(comp > 0)
+        {
+            return contains(node.right, elem);
+        }
+        else
+        {
+            return true;
+        }
+    }
+}
+
+
 
 }
 
